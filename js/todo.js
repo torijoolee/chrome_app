@@ -2,7 +2,7 @@ const todoForm = document.querySelector("#todo__form");
 const todoInput = document.querySelector(".todo__input");
 const todoList = document.querySelector(".todo__list");
 
-const toDos = [];
+let toDos = [];
 
 // toDos in localstorage
 function todosInLocal() {
@@ -11,15 +11,18 @@ function todosInLocal() {
 
 //delete target todo item
 function deleteTodoItem(event) {
-  const targetTodoItem = event.target.parentNode;
-  targetTodoItem.remove();
+  const liTextItems = event.target.parentNode;
+  liTextItems.remove();
+  toDos = toDos.filter((todo) => todo.id !== parseInt(liTextItems.id));
+  todosInLocal();
 }
 
 // show todo Text
 function paintTodo(todoText) {
   const liTextItems = document.createElement("li");
+  liTextItems.id = todoText.id;
   const spanTextItem = document.createElement("span");
-  spanTextItem.innerText = `${todoText}`;
+  spanTextItem.innerText = `${todoText.text}`;
   const btnTextItem = document.createElement("button");
   btnTextItem.innerText = "❌";
   liTextItems.appendChild(spanTextItem);
@@ -32,8 +35,12 @@ function handleTodoSubmit(event) {
   event.preventDefault();
   const todoText = todoInput.value;
   todoInput.value = "";
-  toDos.push(todoText);
-  paintTodo(todoText);
+  const todoTextObj = {
+    text: todoText,
+    id: Date.now(),
+  };
+  toDos.push(todoTextObj);
+  paintTodo(todoTextObj);
   todosInLocal();
 }
 
@@ -42,6 +49,6 @@ todoForm.addEventListener("submit", handleTodoSubmit);
 const tosaveToDos = localStorage.getItem("todoList");
 if (tosaveToDos) {
   const parseTodos = JSON.parse(tosaveToDos);
-  console.log(parseTodos);
-  parseTodos.forEach((item) => console.log(`hello ${item}`));
+  toDos = parseTodos;
+  parseTodos.forEach(paintTodo);
 }
