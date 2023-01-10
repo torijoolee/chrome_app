@@ -3,6 +3,7 @@
   const userInput = document.querySelector(".user__input");
   const userGreeting = document.querySelector("#greeting");
   const todoForm = document.querySelector("#todo__form");
+  const todoInput = document.querySelector(".todo__input");
   const today = document.querySelector(".today");
   // logout
   const logoutForm = document.querySelector("#logout__form");
@@ -23,6 +24,7 @@
     userGreeting.innerText = `hello,${usernameInput}`;
     userGreeting.classList.remove("hidden");
     todoForm.classList.remove("hidden");
+    todoInput.classList.remove("hidden");
     today.innerText = "today";
     today.classList.remove("hidden");
   }
@@ -36,7 +38,11 @@
     paintGreeting(localUsername);
   }
 
+  // 로그아웃
   function handlelogout() {
+    if (localStorage == null) {
+      return;
+    }
     localStorage.removeItem("todoList");
     localStorage.removeItem("username");
     location.reload();
