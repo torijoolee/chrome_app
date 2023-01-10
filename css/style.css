@@ -1,5 +1,24 @@
+html {
+  height: 100vh;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 1);
+}
 .hidden {
   display: none;
+}
+#clock {
+  color: white;
+  position: relative;
+  bottom: 6rem;
+  font-size: 3rem;
+  text-shadow: white 1px 0 100px;
 }
 img {
   position: absolute;
@@ -10,5 +29,48 @@ img {
   right: 0px;
   bottom: 0px;
   z-index: -1;
-  opacity: 1;
+  opacity: 0.8;
+}
+.quotes {
+  text-align: center;
+  position: absolute;
+  bottom: 3rem;
+  width: 90%;
+
+  color: white;
+}
+.quotes span:last-child {
+  font-size: small;
+  opacity: 0.6;
+}
+/* 이름 입력 */
+#greeting {
+  color: white;
+}
+
+#date {
+  position: relative;
+  bottom: 100px;
+  color: white;
+}
+.user__input {
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 3px solid white;
+  width: 40em;
+}
+.user__input::placeholder {
+  color: white;
+}
+
+.user__btn {
+  border: none;
+}
+.todo__input {
+  border: none;
+  outline: none;
+}
+.todo__list li {
+  color: white;
 }

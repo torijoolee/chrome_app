@@ -8,21 +8,22 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <h2 id="date">0000.00.00</h2>
     <h2 id="clock">00:00:00</h2>
     <form class="hidden" id="user__form" action="">
       <input
         class="user__input"
         type="text"
-        placeholder="이름을 입력하세요"
+        placeholder="Hello, what's your name?"
         required
         maxlength="15"
       />
-      <input class="user__btn" type="button" value="제출" />
+      <!-- <input class="user__btn" type="button" value="제출" /> -->
     </form>
     <h1 id="greeting" class="hidden"></h1>
 
     <!-- todo-form -->
-    <form id="todo__form" action="">
+    <form id="todo__form" class="hidden" action="">
       <input
         class="todo__input"
         type="text"
@@ -31,6 +32,7 @@
       />
     </form>
     <ul class="todo__list"></ul>
+
     <!-- quotes -->
     <div class="quotes">
       <span></span><br />
@@ -41,5 +43,6 @@
     <script src="js/quotes.js"></script>
     <script src="js/bg.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/date.js"></script>
   </body>
 </html>
