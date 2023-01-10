@@ -3,6 +3,7 @@
   const userInput = document.querySelector(".user__input");
   const userGreeting = document.querySelector("#greeting");
   const todoForm = document.querySelector("#todo__form");
+  const today = document.querySelector(".today");
 
   function userSubmitHandle(event) {
     event.preventDefault();
@@ -15,9 +16,11 @@
 
   // 사용자 이름 화면에 남기기
   function paintGreeting(usernameInput) {
-    userGreeting.innerText = `hello ${usernameInput}`;
+    userGreeting.innerText = `hello,${usernameInput}`;
     userGreeting.classList.remove("hidden");
     todoForm.classList.remove("hidden");
+    today.innerText = "today";
+    today.classList.remove("hidden");
   }
   const localUsername = localStorage.getItem("username");
   if (localUsername === null) {

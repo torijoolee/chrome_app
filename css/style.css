@@ -15,9 +15,9 @@ body {
 }
 #clock {
   color: white;
-  position: relative;
-  bottom: 6rem;
-  font-size: 3rem;
+  position: fixed;
+  top: 4.5rem;
+  font-size: 4rem;
   text-shadow: white 1px 0 100px;
 }
 img {
@@ -48,11 +48,14 @@ img {
 /* 이름 입력 */
 #greeting {
   color: white;
+  position: fixed;
+  top: 12rem;
+  font-size: 4rem;
 }
 
 #date {
-  position: relative;
-  bottom: 100px;
+  position: fixed;
+  top: 5rem;
   color: white;
 }
 /* greeting */
@@ -61,35 +64,48 @@ img {
   outline: none;
   background: none;
   border-bottom: 3px solid white;
-  width: 20em;
+  width: 25rem;
   color: white;
   font-size: xx-large;
   padding-bottom: 0.5rem;
 }
 .user__input::placeholder {
   color: white;
+  opacity: 0.8;
 }
 .user__btn {
   border: none;
 }
 /* todo */
 .todo__input {
+  position: fixed;
+  margin: 12rem auto;
+  transform: translate(-10rem, -10rem);
   border: none;
   outline: none;
   background: none;
   border-bottom: 3px solid white;
   width: 20rem;
-  padding-bottom: 0.5em;
+  height: 2rem;
+
   color: white;
   font-size: 1rem;
-  margin-bottom: 0.5em;
 }
 ul {
-  margin: 0;
   padding: 0;
+  position: fixed;
+  top: 26rem;
+  text-align: center;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
 }
+
 .todo__input::placeholder {
   color: white;
+  opacity: 0.8;
+  font-size: 1.5rem;
 }
 
 .todo__list li {
@@ -101,6 +117,7 @@ ul {
 .todo__list span {
   padding-left: 0.2rem;
   padding-bottom: 0.2rem;
+  font-size: xx-large;
 }
 .todo__list li::before {
   content: "● ";
@@ -114,4 +131,11 @@ ul {
   padding-left: 0.5rem;
   color: red;
   font-size: large;
+}
+.today {
+  color: white;
+  position: relative;
+
+  margin-top: 4.5rem;
+  font-size: x-large;
 }

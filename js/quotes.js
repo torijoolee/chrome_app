@@ -25,7 +25,7 @@
     {
       quote:
         "The fastest way to change yourself is to hang out with people who are already the way you want to be",
-      author: "REid Hoffman",
+      author: "Reid Hoffman",
     },
     {
       quote:
