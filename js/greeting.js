@@ -4,7 +4,11 @@
   const userGreeting = document.querySelector("#greeting");
   const todoForm = document.querySelector("#todo__form");
   const today = document.querySelector(".today");
+  // logout
+  const logoutForm = document.querySelector("#logout__form");
+  const logoutBtn = document.querySelector(".logout__btn");
 
+  // 초기화면
   function userSubmitHandle(event) {
     event.preventDefault();
     userForm.classList.add("hidden");
@@ -31,4 +35,12 @@
     //h1에 이름이 보이도록 한다.
     paintGreeting(localUsername);
   }
+
+  function handlelogout() {
+    localStorage.removeItem("todoList");
+    localStorage.removeItem("username");
+    location.reload();
+  }
+
+  logoutBtn.addEventListener("click", handlelogout);
 })();
