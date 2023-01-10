@@ -34,13 +34,15 @@ img {
 .quotes {
   text-align: center;
   position: absolute;
-  bottom: 3rem;
+  bottom: 2rem;
   width: 90%;
-
   color: white;
 }
+.quotes span:first-child {
+  font-size: smaller;
+}
 .quotes span:last-child {
-  font-size: small;
+  font-size: smaller;
   opacity: 0.6;
 }
 /* 이름 입력 */
@@ -53,24 +55,63 @@ img {
   bottom: 100px;
   color: white;
 }
+/* greeting */
 .user__input {
   border: none;
   outline: none;
   background: none;
   border-bottom: 3px solid white;
-  width: 40em;
+  width: 20em;
+  color: white;
+  font-size: xx-large;
+  padding-bottom: 0.5rem;
 }
 .user__input::placeholder {
   color: white;
 }
-
 .user__btn {
   border: none;
 }
+/* todo */
 .todo__input {
   border: none;
   outline: none;
+  background: none;
+  border-bottom: 3px solid white;
+  width: 20rem;
+  padding-bottom: 0.5em;
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
 }
+ul {
+  margin: 0;
+  padding: 0;
+}
+.todo__input::placeholder {
+  color: white;
+}
+
 .todo__list li {
   color: white;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.todo__list span {
+  padding-left: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+.todo__list li::before {
+  content: "● ";
+  font-size: large;
+  pointer-events: none;
+  padding: 0.5rem;
+}
+.todo__list li button {
+  background: none;
+  border: none;
+  padding-left: 0.5rem;
+  color: red;
+  font-size: large;
 }

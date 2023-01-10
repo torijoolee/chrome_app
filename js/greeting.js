@@ -2,6 +2,7 @@
   const userForm = document.querySelector("#user__form");
   const userInput = document.querySelector(".user__input");
   const userGreeting = document.querySelector("#greeting");
+  const todoForm = document.querySelector("#todo__form");
 
   function userSubmitHandle(event) {
     event.preventDefault();
@@ -16,6 +17,7 @@
   function paintGreeting(usernameInput) {
     userGreeting.innerText = `hello ${usernameInput}`;
     userGreeting.classList.remove("hidden");
+    todoForm.classList.remove("hidden");
   }
   const localUsername = localStorage.getItem("username");
   if (localUsername === null) {

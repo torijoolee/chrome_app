@@ -12,8 +12,10 @@ function todosInLocal() {
 //delete target todo item
 function deleteTodoItem(event) {
   const liTextItems = event.target.parentNode;
-  liTextItems.remove();
-  toDos = toDos.filter((todo) => todo.id !== parseInt(liTextItems.id));
+  liTextItems.parentNode.remove();
+  toDos = toDos.filter(
+    (todo) => todo.id !== parseInt(liTextItems.parentNode.id)
+  );
   todosInLocal();
 }
 
@@ -24,10 +26,10 @@ function paintTodo(todoText) {
   const spanTextItem = document.createElement("span");
   spanTextItem.innerText = `${todoText.text}`;
   const btnTextItem = document.createElement("button");
-  btnTextItem.innerText = "❌";
+  btnTextItem.innerText = "×";
   liTextItems.appendChild(spanTextItem);
-  liTextItems.appendChild(btnTextItem);
-  liTextItems.addEventListener("click", deleteTodoItem);
+  spanTextItem.appendChild(btnTextItem);
+  btnTextItem.addEventListener("click", deleteTodoItem);
   todoList.appendChild(liTextItems);
 }
 
