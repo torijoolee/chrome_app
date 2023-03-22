@@ -8,18 +8,12 @@ body {
   justify-content: center;
   flex-direction: column;
   margin: 0;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .hidden {
   display: none;
 }
-#clock {
-  color: white;
-  position: fixed;
-  top: 4.5rem;
-  font-size: 4rem;
-  text-shadow: white 1px 0 100px;
-}
+
 img {
   position: absolute;
   width: 100%;
@@ -48,26 +42,30 @@ img {
 }
 /* 이름 입력 */
 #greeting {
-  color: white;
-  position: fixed;
-  top: 12rem;
-  font-size: 4rem;
+  font-size: 8rem;
 }
-
-#date {
-  position: fixed;
-  top: 5rem;
+.date,
+.clock {
+  position: absolute;
+  left: 1.5rem;
+  top: 1rem;
   color: white;
+}
+.date {
+  font-size: 1.5rem;
+}
+.clock {
+  top: 1.5rem;
+  text-shadow: white 1px 0 100px;
+  font-size: 3rem;
 }
 /* greeting */
 .user__input {
-  border: none;
-  outline: none;
-  background: none;
+  all: unset;
   border-bottom: 3px solid white;
-  width: 25rem;
+  /* width: 100%; */
   color: white;
-  font-size: xx-large;
+  font-size: 4rem;
   padding-bottom: 0.5rem;
 }
 .user__input::placeholder {
@@ -88,7 +86,7 @@ img {
   outline: none;
   background: none;
   border-bottom: 3px solid white;
-  width: 26.5rem;
+  /* width: 26.5rem; */
   padding-top: 10px;
   padding-bottom: 0.4rem;
   color: white;
